@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ventus-test</title>
+    <link rel="icon" type="image/x-icon" href="http://ventus-test.de/bilder/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="Startseite">
+
+        <header>
+            <h1 class="bungee-tint-regular">Willkommen zu ventus-test.de</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#Startseite">Startseite</a></li>
+                <li><a href="#Über uns">Über uns</a></li>
+                <li><a href="#Galerie">Galerie</a></li>
+                <li><a href="#Kontakt">Kontakt</a></li>
+
+            </ul>
+        </nav>
+        <main>
+            <section id="Über uns">
+                <h2>Über Minecraft</h2>
+                <p>Minecraft ist ein Sandbox-Spiel, bei dem Spieler ihre Kreativität durch den Bau von Strukturen aus
+                    texturierten Würfeln in einer 3D-Welt ausleben können.</p>
+                <label for="textToCopy">Tritt unserem Minecraft server bei:</label>
+                <span id="textToCopy" style="font-weight: bold;" >ventus-test.de</span>
+                <button onclick="copyToClipboard(), this.style.background = 'green'" >Kopieren</button>
+
+                <script>
+                    function copyToClipboard() {
+                        const textToCopy = document.getElementById('textToCopy');
+                        const tempInput = document.createElement('input');
+                        tempInput.value = textToCopy.textContent;
+                        document.body.appendChild(tempInput);
+                        tempInput.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(tempInput);
+
+                        // Einfache Erfolgsmeldung ohne Pop-up
+                        textToCopy.classList.add('copied');
+                        setTimeout(() => {
+                            textToCopy.classList.remove('copied');
+                        }, 2000);
+                    }
+                </script>
+            </section>
+            <!----Galerie  -->
+            <section id="Galerie">
+                <h2>Galerie</h2>
+                <div class="bilder">
+                    <img src="bilder/1.png" alt="blank" class="gallery">
+                    <img src="bilder/2.png" alt="blank" class="gallery">
+                    <img src="bilder/3.png" alt="blank" class="gallery">
+                    <img src="bilder/4.png" alt="blank" class="gallery">
+                </div>
+            </section>
+            <!---Kontakt -->
+            <section id="Kontakt">
+                <h2>Kontakt</h2>
+                <div>
+                    <p>Für schnellste Hilfe und Support wende dich bitte direkt an unser Discord-Team.</p>
+                </div>
+                <a href="https://discord.gg/ME2CSM4jXp"><img src="bilder/Discord-logo.png" alt="blank" class="dlogo">
+                </a>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Minecraft-Fan-Website. Alle Rechte vorbehalten.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
